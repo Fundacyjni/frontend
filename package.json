@@ -10,6 +10,9 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
+    "lintfix:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore --fix .",
+    "lintfix:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore --fix",
+    "lintfix": "npm run lintfix:js && npm run lintfix:style",
     "test": "jest"
   },
   "lint-staged": {
