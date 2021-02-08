@@ -11,22 +11,26 @@
           <v-radio label="przedmiot" value="gift"></v-radio>
           <v-radio label="zbiórka" value="fundraising"></v-radio>
         </v-radio-group>
-        <v-slider
-          v-if="type == 'fundraising'"
-          v-model="price"
-          :min="min"
-          :max="max"
-        ></v-slider>
-        <v-text-field
-          v-if="type == 'fundraising'"
-          v-model="price"
-          label="cena"
-          :rules="priceRules"
-          suffix="zł"
-          outlined
-          dense
-          required
-        ></v-text-field>
+        <v-expand-transition>
+          <v-slider
+            v-if="type == 'fundraising'"
+            v-model="price"
+            :min="min"
+            :max="max"
+          ></v-slider>
+        </v-expand-transition>
+        <v-expand-transition>
+          <v-text-field
+            v-if="type == 'fundraising'"
+            v-model="price"
+            label="cena"
+            :rules="priceRules"
+            suffix="zł"
+            outlined
+            dense
+            required
+          ></v-text-field>
+        </v-expand-transition>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
             v-model="title"
@@ -75,7 +79,6 @@ export default {
       desc: '',
       priceRules: [
         (v) => !!v || 'Podaj wartość zbiórki',
-        (v) => !String(v).includes('.') || 'Podaj wartość całkowitą',
         (v) => !isNaN(Number(v)) || 'Podaj liczbę',
         (v) => v >= this.min || 'Cena jest zbyt niska',
         (v) => v <= this.max || 'Cena jest zbyt wysoka',
