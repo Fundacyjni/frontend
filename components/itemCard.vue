@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card nuxt :to="'/posts/' + id">
     <v-img :src="image" max-height="200px"></v-img>
     <v-card-title>Lorem Ipsum</v-card-title>
     <v-card-subtitle> <v-img></v-img> przez Lorem Ipsum </v-card-subtitle>
@@ -10,6 +10,7 @@
 export default {
   props: {
     image: String,
+    id: Number,
   },
 }
 </script>

@@ -17,7 +17,11 @@
     </v-row>
     <v-row justify="center">
       <v-col v-for="post in posts" :key="post.id" cols="12" md="6">
-        <item-card image="https://picsum.photos/1000" class="mb-5" />
+        <item-card
+          :id="post.id"
+          image="https://picsum.photos/1000"
+          class="mb-5"
+        />
       </v-col>
     </v-row>
   </div>
