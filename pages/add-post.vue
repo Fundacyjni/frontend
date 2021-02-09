@@ -15,8 +15,8 @@
           <v-slider
             v-if="type == 'fundraising'"
             v-model="price"
-            :min="min"
-            :max="max"
+            :min="minPrice"
+            :max="maxPrice"
           ></v-slider>
         </v-expand-transition>
         <v-expand-transition>
@@ -51,6 +51,18 @@
             dense
             required
           ></v-textarea>
+          <div class="d-sm-flex">
+            <v-file-input
+              v-model="files"
+              small-chips
+              multiple
+              label="zdjęcia"
+              max="2"
+            ></v-file-input>
+            <v-btn class="ml-8 mt-5" style="color: #eee; background: #5570d5">
+              dodaj
+            </v-btn>
+          </div>
           <v-btn
             block
             class="mt-5 green accent-3"
@@ -70,9 +82,10 @@
 export default {
   data() {
     return {
+      files: [],
       type: '',
-      min: 100,
-      max: 100000,
+      minPrice: 100,
+      maxPrice: 100000,
       price: 100,
       valid: true,
       title: '',
@@ -80,8 +93,8 @@ export default {
       priceRules: [
         (v) => !!v || 'Podaj wartość zbiórki',
         (v) => !isNaN(Number(v)) || 'Podaj liczbę',
-        (v) => v >= this.min || 'Cena jest zbyt niska',
-        (v) => v <= this.max || 'Cena jest zbyt wysoka',
+        (v) => v >= this.minPrice || 'Cena jest zbyt niska',
+        (v) => v <= this.maxPrice || 'Cena jest zbyt wysoka',
       ],
       titleRules: [
         (v) => !!v || 'Uzupełnij puste pola',
@@ -106,6 +119,7 @@ export default {
 }
 .v-card__title {
   text-transform: uppercase;
+  font-size: 20px;
   letter-spacing: 1px;
   color: #5570d5;
 }
