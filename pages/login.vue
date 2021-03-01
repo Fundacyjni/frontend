@@ -6,8 +6,8 @@
           <v-text-field
             v-model="username"
             :rules="loginRules"
-            label="login"
-            placeholder="login lub email"
+            label="Login"
+            placeholder="Login lub email"
             prepend-icon="mdi-account-circle"
             outlined
             dense
@@ -15,8 +15,8 @@
           <v-text-field
             v-model="password"
             :rules="loginRules"
-            label="hasło"
-            placeholder="hasło"
+            label="Hasło"
+            placeholder="Hasło"
             prepend-icon="mdi-lock"
             outlined
             dense
