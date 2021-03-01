@@ -2,7 +2,7 @@
   <v-row align="center" justify="center" style="height: 100%">
     <v-col sm="8" md="5" lg="5" xl="3">
       <v-card class="pa-10" elevation="2" outlined style="border-radius: 20px">
-        <v-form ref="form" v-model="valid" lazy-validation>
+        <v-form v-model="valid">
           <v-text-field
             v-model="username"
             :rules="loginRules"
@@ -40,15 +40,14 @@
 export default {
   data() {
     return {
-      valid: true,
+      valid: false,
       username: '',
       password: '',
       loginRules: [(v) => !!v || 'Uzupełnij puste pola'],
     }
   },
   methods: {
-    async validate() {
-      await this.$refs.form.validate()
+    validate() {
       if (this.valid) alert('Pomyślnie zalogowano :)')
     },
   },
