@@ -33,6 +33,12 @@
         </v-expand-transition>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
+            v-model="url"
+            label="link do zbiórki"
+            outlined
+            dense
+          ></v-text-field>
+          <v-text-field
             v-model="title"
             :counter="100"
             :rules="titleRules"
@@ -82,14 +88,15 @@
 export default {
   data() {
     return {
-      files: [],
-      type: '',
+      type: 'gift',
+      price: 100,
       minPrice: 100,
       maxPrice: 100000,
-      price: 100,
-      valid: true,
+      url: '',
       title: '',
       desc: '',
+      files: [],
+      valid: true,
       priceRules: [
         (v) => !!v || 'Podaj wartość zbiórki',
         (v) => !isNaN(Number(v)) || 'Podaj liczbę',
