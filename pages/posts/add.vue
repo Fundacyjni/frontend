@@ -50,9 +50,7 @@
           <v-textarea
             v-model="desc"
             label="opis"
-            height="300"
             :rules="descRules"
-            no-resize
             outlined
             dense
             required
