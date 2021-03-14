@@ -1,6 +1,6 @@
 <template>
   <v-row class="my-2" align="center" justify="center" style="height: 100%">
-    <v-col sm="8" md="8" lg="8" xl="6">
+    <v-col cols="12" md="8" xl="6">
       <v-card class="pa-10" elevation="2" outlined style="border-radius: 20px">
         <v-card-title class="justify-center">Formularz ogłoszenia</v-card-title>
         <v-radio-group v-model="type">
