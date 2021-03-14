@@ -11,26 +11,6 @@
           <v-radio label="przedmiot" value="gift"></v-radio>
           <v-radio label="zbiórka" value="fundraising"></v-radio>
         </v-radio-group>
-        <v-expand-transition>
-          <v-slider
-            v-if="type == 'fundraising'"
-            v-model="price"
-            :min="minPrice"
-            :max="maxPrice"
-          ></v-slider>
-        </v-expand-transition>
-        <v-expand-transition>
-          <v-text-field
-            v-if="type == 'fundraising'"
-            v-model="price"
-            label="cena"
-            :rules="priceRules"
-            suffix="zł"
-            outlined
-            dense
-            required
-          ></v-text-field>
-        </v-expand-transition>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
             v-model="url"
