@@ -14,7 +14,7 @@
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
             v-model="url"
-            label="link do zbiórki"
+            label="Strona internetowa"
             outlined
             dense
           ></v-text-field>
