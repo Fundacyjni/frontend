@@ -102,7 +102,6 @@ export default {
 </script>
 
 <style scoped>
-.v-form,
 .container {
   height: 100%;
 }
