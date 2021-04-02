@@ -84,7 +84,7 @@ export default {
       ],
       titleRules: [
         (v) => !!v || 'Uzupełnij puste pola',
-        (v) => v.length <= 100 || 'Tytuł nie spełnia wymagań',
+        (v) => v.length <= 100 || 'Twój tytuł jest za długi!',
       ],
       descRules: [
         (v) => !!v || 'Uzupełnij puste pola',
