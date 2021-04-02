@@ -22,14 +22,14 @@
             v-model="title"
             :counter="100"
             :rules="titleRules"
-            label="tytuł"
+            label="Tytuł"
             outlined
             dense
             required
           ></v-text-field>
           <v-textarea
             v-model="desc"
-            label="opis"
+            label="Opis"
             :counter="2000"
             :rules="descRules"
             outlined
@@ -41,7 +41,7 @@
               v-model="files"
               small-chips
               multiple
-              label="zdjęcia"
+              label="Zdjęcia"
               max="2"
             ></v-file-input>
             <v-btn class="ml-8 mt-5" style="color: #eee; background: #5570d5">
