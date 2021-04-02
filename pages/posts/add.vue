@@ -30,6 +30,7 @@
           <v-textarea
             v-model="desc"
             label="opis"
+            :counter="2000"
             :rules="descRules"
             outlined
             dense
@@ -85,7 +86,10 @@ export default {
         (v) => !!v || 'Uzupełnij puste pola',
         (v) => v.length <= 100 || 'Tytuł nie spełnia wymagań',
       ],
-      descRules: [(v) => !!v || 'Uzupełnij puste pola'],
+      descRules: [
+        (v) => !!v || 'Uzupełnij puste pola',
+        (v) => v.length <= 2000 || 'Twój opis jest za długi!',
+      ],
     }
   },
   methods: {
