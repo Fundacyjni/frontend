@@ -14,6 +14,8 @@
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
             v-model="url"
+            :counter="500"
+            :rules="urlRules"
             label="Strona internetowa"
             outlined
             dense
@@ -82,6 +84,7 @@ export default {
         (v) => v >= this.minPrice || 'Cena jest zbyt niska',
         (v) => v <= this.maxPrice || 'Cena jest zbyt wysoka',
       ],
+      urlRules: [(v) => v.length <= 500 || 'Link jest zbyt długi!'],
       titleRules: [
         (v) => !!v || 'Uzupełnij puste pola',
         (v) => v.length <= 100 || 'Twój tytuł jest za długi!',
